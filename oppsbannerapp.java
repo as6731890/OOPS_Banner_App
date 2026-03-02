@@ -1,3 +1,28 @@
+ features/UC5-array-lnit
+features/UC5-array-lnit
+public class OOPSArrayInit {
+
+    public static void main(String[] args) {
+
+        // Declare and initialize array inline using String.join()
+        String[] lines = {
+            String.join(" ", " *** ", " *** ", " *****", " *****"),
+			
+            String.join(" ", "*   *", "*   *", "*    *", "*     "),
+			
+            String.join(" ", "*   *", "*   *", "*    *", "*     "),
+			
+            String.join(" ", "*   *", "*   *", "***** ", "***** "),
+			
+            String.join(" ", "*   *", "*   *", "*     ", "    * "),
+			
+            String.join(" ", "*   *", "*   *", "*     ", "    * "),
+			
+            String.join(" ", " *** ", " *** ", "*     ", "***** ")
+        };
+
+        // Loop to print banner
+
 features/UC6-static-functions
 public class OOPSstatic {
 
@@ -56,6 +81,7 @@ public class OOPSstatic {
             );
         }
     }
+ main
 
 featurs/UC4-array-and-loops
 public class OOPSArray{
@@ -77,10 +103,13 @@ public class OOPSArray{
             " ***     ***     *       ***** "
         };
 
+ main
         for (String line : lines) {
             System.out.println(line);
         }
     }
+ features/UC5-array-lnit
+
 
 features/UC3-use-string-join
 /*
@@ -136,5 +165,8 @@ public class OOPSBannerApp {
          main
  main
  main
+ features/UC5-array-lnit
+ main
 main
+ main
 }
