@@ -1,1 +1,20 @@
 # OOPS_Banner_App
+# VS Code
+.vscode/
+
+# Compiled files
+*.class
+*.jar
+*.log
+
+# IDE folders
+.idea/
+target/
+bin/
+out/
+build/
+dist/
+
+# OS files
+.DS_Store
+*.iml
