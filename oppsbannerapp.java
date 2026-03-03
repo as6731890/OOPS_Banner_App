@@ -1,172 +1,77 @@
- features/UC5-array-lnit
-features/UC5-array-lnit
-public class OOPSArrayInit {
+ import java.util.HashMap;
+import java.util.Map;
 
-    public static void main(String[] args) {
+public class OOPSBannerApp {
 
-        // Declare and initialize array inline using String.join()
-        String[] lines = {
-            String.join(" ", " *** ", " *** ", " *****", " *****"),
-			
-            String.join(" ", "*   *", "*   *", "*    *", "*     "),
-			
-            String.join(" ", "*   *", "*   *", "*    *", "*     "),
-			
-            String.join(" ", "*   *", "*   *", "***** ", "***** "),
-			
-            String.join(" ", "*   *", "*   *", "*     ", "    * "),
-			
-            String.join(" ", "*   *", "*   *", "*     ", "    * "),
-			
-            String.join(" ", " *** ", " *** ", "*     ", "***** ")
-        };
+    public static Map<Character, String[]> createCharacterPatternMap() {
 
-        // Loop to print banner
+        Map<Character, String[]> patternMap = new HashMap<>();
 
-features/UC6-static-functions
-public class OOPSstatic {
+        patternMap.put('O', new String[]{
+                " *** ",
+                "*   *",
+                "*   *",
+                "*   *",
+                "*   *",
+                "*   *",
+                " *** "
+        });
 
-    // Pattern for letter O
-    public static String[] getOPattern() {
-        return new String[] {
-            " *** ",
-            "*   *",
-            "*   *",
-            "*   *",
-            "*   *",
-            "*   *",
-            " *** "
-        };
+        patternMap.put('P', new String[]{
+                "**** ",
+                "*   *",
+                "*   *",
+                "**** ",
+                "*    ",
+                "*    ",
+                "*    "
+        });
+
+        patternMap.put('S', new String[]{
+                " ****",
+                "*    ",
+                "*    ",
+                " *** ",
+                "    *",
+                "    *",
+                "**** "
+        });
+
+        patternMap.put(' ', new String[]{
+                "     ",
+                "     ",
+                "     ",
+                "     ",
+                "     ",
+                "     ",
+                "     "
+        });
+
+        return patternMap;
     }
 
-    // Pattern for letter P
-    public static String[] getPPattern() {
-        return new String[] {
-            "**** ",
-            "*   *",
-            "*   *",
-            "**** ",
-            "*    ",
-            "*    ",
-            "*    "
-        };
-    }
+    public static void printBanner(String message, Map<Character, String[]> patternMap) {
 
-    // Pattern for letter S
-    public static String[] getSPattern() {
-        return new String[] {
-            " ****",
-            "*    ",
-            "*    ",
-            " *** ",
-            "    *",
-            "    *",
-            "**** "
-        };
-    }
+        for (int row = 0; row < 7; row++) {
 
-    public static void main(String[] args) {
+            StringBuilder line = new StringBuilder();
 
-        String[] oPattern = getOPattern();
-        String[] pPattern = getPPattern();
-        String[] sPattern = getSPattern();
+            for (char ch : message.toCharArray()) {
 
-        // Print OOPS (O O P S)
-        for (int i = 0; i < oPattern.length; i++) {
-            System.out.println(
-                oPattern[i] + "  " +
-                oPattern[i] + "  " +
-                pPattern[i] + "  " +
-                sPattern[i]
-            );
-        }
-    }
- main
+                String[] pattern = patternMap.getOrDefault(ch, patternMap.get(' '));
+                line.append(pattern[row]).append("  ");
+            }
 
-featurs/UC4-array-and-loops
-public class OOPSArray{
-    public static void main(String[] args) {
-
-        String[] lines = {
-            " ***     ***     *****   ***** ",
-			
-            "*   *   *   *    *    *  *     ",
-			
-            "*   *   *   *    *    *  *     ",
-			
-            "*   *   *   *    *****   ***** ",
-			
-            "*   *   *   *    *           * ",
-			
-            "*   *   *   *    *           * ",
-			
-            " ***     ***     *       ***** "
-        };
-
- main
-        for (String line : lines) {
             System.out.println(line);
         }
     }
- features/UC5-array-lnit
-
-
-features/UC3-use-string-join
-/*
- * OOPSBannerApp UC3 - OOPS Banner Application (Use Case 3)
- * Uses String.join() for better memory efficiency
- */
-
-public class OOPSBannerApp {
 
     public static void main(String[] args) {
 
-        System.out.println(String.join(" ",
-                " *** ", " *** ", " **** ", " *****"));
+        Map<Character, String[]> patternMap = createCharacterPatternMap();
 
-        System.out.println(String.join(" ",
-                "*   *", "*   *", "*   *", "*"));
+        String message = "OOPS";
 
-        System.out.println(String.join(" ",
-                "*   *", "*   *", "*   *", "*"));
-
-        System.out.println(String.join(" ",
-                "*   *", "*   *", "**** ", " *****"));
-
-        System.out.println(String.join(" ",
-                "*   *", "*   *", "*    ", "     *"));
-
-        System.out.println(String.join(" ",
-                "*   *", "*   *", "*    ", "     *"));
-
-        System.out.println(String.join(" ",
-                " *** ", " *** ", "*    ", " *****"));
+        printBanner(message, patternMap);
     }
-public class OOPSBannerApp {
-
- features/UC2-print-banner
-public class OOPSBannerApp {
-
-    public static void main(String[] args) {
-        System.out.println("   **   " + "   " + "   **   " + "   " + " **********   " + "   *********");
-        System.out.println(" **  ** " + "   " + " **  ** " + "   " + " **      **   " + " **         ");
-        System.out.println("*      *" + "   " + "*      *" + "   " + " **      **   " + "*           ");
-        System.out.println("*      *" + "   " + "*      *" + "   " + " **      **   " + "*           ");
-        System.out.println("*      *" + "   " + "*      *" + "   " + " **********   " + " ********   ");
-        System.out.println("*      *" + "   " + "*      *" + "   " + " **********   " + "         ** ");
-        System.out.println("*      *" + "   " + "*      *" + "   " + " **           " + "           *");
-        System.out.println("*      *" + "   " + "*      *" + "   " + " **           " + "           *");
-        System.out.println(" **  ** " + "   " + " **  ** " + "   " + " **           " + "         ** ");
-        System.out.println("   **   " + "   " + "   **   " + "   " + " **           " + "*********   ");
-    }
-
-    public static void main(String[] args) {
-        System.out.println("OOPS");
-         main
- main
- main
- features/UC5-array-lnit
- main
-main
- main
 }
